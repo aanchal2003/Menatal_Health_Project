@@ -20,7 +20,7 @@ MODEL_PATHS = {
 }
 
 FEATURE_SETTINGS = {
-    'target': 'ema_score',  # Common target variable
+    'target': 'ema_score',
     'drop_cols': ['study_id', 'date', 'eureka_id']
 }
 
