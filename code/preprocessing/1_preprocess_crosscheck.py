@@ -45,7 +45,7 @@ def preprocess_crosscheck():
     df.to_csv(DATA_PATHS['crosscheck_processed'], index=False)
 
     # Print processing summary
-    print("\n✅ Data preprocessing completed successfully.\n")
+    print("\nData preprocessing completed successfully.\n")
     print("Processed Data Info:")
     print(df.info())
     print("\nProcessed Data Statistics:")
