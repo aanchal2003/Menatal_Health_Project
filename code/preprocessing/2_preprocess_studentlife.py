@@ -7,7 +7,9 @@ from config import DATA_PATHS
 
 def preprocess_studentlife():
     df = pd.read_csv(DATA_PATHS['studentlife_raw'], parse_dates=['day'])
-    
+
+
+    #NORMALIZATION(IN ORDER TO REMOVE REDUNDANCY AND DROP UNNECESSARY FEATURES)
     # Convert datetime to numerical features
     df['day_of_week'] = df['day'].dt.dayofweek
     df['day_hour'] = df['day'].dt.hour
@@ -18,11 +20,11 @@ def preprocess_studentlife():
     mood_filled = df['ema_Mood_sad'].fillna(df['ema_Mood_sad'].median())
     df['ema_score'] = (stress_filled * 2 + mood_filled).round().astype(int)
     
-    # Handle zero scores and ensure integer type
+    # Handling zero scores and ensure integer type
     df['ema_score'] = df['ema_score'].replace(0, 1).astype(int)
     df = df.dropna(subset=['ema_score'])
     
-    # Save preprocessed data
+    # SavING
     df.to_csv(DATA_PATHS['studentlife_processed'], index=False)
 
     # Print summary
