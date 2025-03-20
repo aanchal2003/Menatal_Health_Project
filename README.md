@@ -1,6 +1,6 @@
 # Menatal_Health_Project
 
-Project Title: Mental Health Prediction from Sensor and EMA Data
+Project Title: Mental Health Prediction 
 
 Description:
 
